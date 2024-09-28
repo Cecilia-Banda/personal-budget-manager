@@ -4,6 +4,8 @@ const Header = () => {
     return (
         <header>
             <h1>Personal Budget Manager</h1>
+
+    
         </header>
     );
 };
