@@ -1,5 +1,4 @@
-import './App.css'; // This should be at the top of App.js
-
+import './App.css';
 import React, { useState } from 'react';
 import Header from './components/Header';
 import ExpenseForm from './components/ExpenseForm';
@@ -8,13 +7,15 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const budgetLimit = 100; // Set a budget limit (you can make this dynamic later)
 
+  // Calculate total spent based on the current expenses
+  const totalSpent = expenses.reduce((acc, curr) => acc + Number(curr.amount), 0);
+
   const addExpense = (expense) => {
     setExpenses((prevExpenses) => {
       const updatedExpenses = [...prevExpenses, expense];
-      const totalSpent = updatedExpenses.reduce((acc, curr) => acc + Number(curr.amount), 0); // Calculate total spent
-
+      
       // Alert if the total spent is greater than or equal to the budget limit
-      if (totalSpent >= budgetLimit) {
+      if (totalSpent + Number(expense.amount) >= budgetLimit) {
         alert("Whoa there, big spender! You're nearing your budget limit for this category.");
       }
 
@@ -26,7 +27,14 @@ function App() {
     <div className="App">
       <Header />
       <h2 style={{ textAlign: 'center', margin: '20px 0' }}>Welcome to Your Personal Budget Manager!🎉</h2>
+      
       <ExpenseForm addExpense={addExpense} />
+
+      {/* Display total expenses */}
+      <h3 style={{ textAlign: 'center' }}>
+        Total Expenses: {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(totalSpent)}
+      </h3>
+
       <h2 style={{ textAlign: 'center' }}>Your Expenses List ✨</h2>
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         {expenses.map((expense, index) => (
@@ -34,6 +42,7 @@ function App() {
             {expense.category}: 
             <strong>
               {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(expense.amount)}
+              {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'ZMW' }).format(expense.amount)}
             </strong> 
             - {expense.description}
           </li>
@@ -44,5 +53,3 @@ function App() {
 }
 
 export default App;
-
-

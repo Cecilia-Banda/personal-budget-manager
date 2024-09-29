@@ -39,13 +39,23 @@ const ExpenseForm = ({ addExpense }) => {
       </div>
       <div>
         <label>Category (e.g., Food, Fun) 🍕🎉</label>
-        <input
-          type="text"
+        <select
           name="category"
           value={expense.category}
           onChange={handleChange}
           required
-        />
+        >
+          <option value="">Select a category</option>
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Housing">Housing</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Beauty">Beauty</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Health">Health</option>
+          <option value="Donate">Donate</option>
+          <option value="Other">Other</option>
+        </select>
       </div>
       <button type="submit" style={{ backgroundColor: '#f39c12', color: '#fff', padding: '10px', border: 'none', borderRadius: '5px' }}>
         Add My Expense here 🌟
@@ -55,4 +65,3 @@ const ExpenseForm = ({ addExpense }) => {
 };
 
 export default ExpenseForm;
-
