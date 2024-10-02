@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return (
         <header>
-            <h1>Personal Budget Manager</h1>
+            <h1>SilkSpend Budget Manager</h1>
 
     
         </header>

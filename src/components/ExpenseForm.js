@@ -16,9 +16,9 @@ const ExpenseForm = ({ addExpense }) => {
 
   return (
     <form onSubmit={handleSubmit} style={{ margin: '20px 0', textAlign: 'center' }}>
-      <h3>Add Your Lovely Expense Here 🌼</h3>
+      <h3>Add Your in-budget Expense Here 🌼</h3>
       <div>
-        <label>How much? 💰</label>
+        <label>How much is it? 💰</label>
         <input
           type="number"
           name="amount"
@@ -38,7 +38,7 @@ const ExpenseForm = ({ addExpense }) => {
         />
       </div>
       <div>
-        <label>Category (e.g., Food, Fun) 🍕🎉</label>
+        <label>Category (e.g., Food, Entertinment) 🍕🎉</label>
         <select
           name="category"
           value={expense.category}
@@ -58,7 +58,7 @@ const ExpenseForm = ({ addExpense }) => {
         </select>
       </div>
       <button type="submit" style={{ backgroundColor: '#f39c12', color: '#fff', padding: '10px', border: 'none', borderRadius: '5px' }}>
-        Add My Expense here 🌟
+        Add My Expense🌟
       </button>
     </form>
   );
