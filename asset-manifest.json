@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/personal-budget-manager/static/css/main.cd9938f0.css",
+    "main.js": "/personal-budget-manager/static/js/main.d03facbd.js",
+    "static/js/453.e4f83acf.chunk.js": "/personal-budget-manager/static/js/453.e4f83acf.chunk.js",
+    "index.html": "/personal-budget-manager/index.html",
+    "main.cd9938f0.css.map": "/personal-budget-manager/static/css/main.cd9938f0.css.map",
+    "main.d03facbd.js.map": "/personal-budget-manager/static/js/main.d03facbd.js.map",
+    "453.e4f83acf.chunk.js.map": "/personal-budget-manager/static/js/453.e4f83acf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd9938f0.css",
+    "static/js/main.d03facbd.js"
+  ]
+}
