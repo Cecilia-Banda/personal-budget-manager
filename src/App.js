@@ -9,7 +9,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 function App() {
   const [expenses, setExpenses] = useState([]);
-  const budgetLimit = 1000; // Set a budget limit (you can make this dynamic later)
+  const budgetLimit = 1500; // Set a budget limit 
 
   // Calculate total spent based on the current expenses
   const totalSpent = expenses.reduce((acc, curr) => acc + Number(curr.amount), 0);
@@ -27,7 +27,7 @@ function App() {
     });
   };
 
-  // Prepare data for the pie chart
+  // Pie data
   const chartData = {
     labels: expenses.map(expense => expense.category),
     datasets: [
@@ -60,12 +60,12 @@ function App() {
       
       <ExpenseForm addExpense={addExpense} />
 
-      {/* Display total expenses */}
+      {/* Show total expenses */}
       <h3 style={{ textAlign: 'center' }}>
         Total Expenses: {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'ZMW' }).format(totalSpent)}
       </h3>
 
-      {/* Add the pie chart */}
+      {/* Adding in the pie chart */}
       <div style={{ width: '300px', height: '300px', margin: '0 auto' }}>
         <h2 style={{ textAlign: 'center' }}>Expense Breakdown</h2>
         <Pie data={chartData} />

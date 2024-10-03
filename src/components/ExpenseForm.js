@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const ExpenseForm = ({ addExpense }) => {
-  const [expense, setExpense] = useState({ amount: '', description: '', category: '' });
+  const [expense, setExpense] = useState({ amount: '', description: '', category: '', date: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -11,7 +11,7 @@ const ExpenseForm = ({ addExpense }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addExpense(expense);
-    setExpense({ amount: '', description: '', category: '' });
+    setExpense({ amount: '', description: '', category: '', date: '' });
   };
 
   return (
@@ -38,7 +38,7 @@ const ExpenseForm = ({ addExpense }) => {
         />
       </div>
       <div>
-        <label>Category (e.g., Food, Entertinment) 🍕🎉</label>
+        <label>Category (e.g., Food, Entertainment) 🍕🎉</label>
         <select
           name="category"
           value={expense.category}
@@ -56,6 +56,16 @@ const ExpenseForm = ({ addExpense }) => {
           <option value="Donate">Donate</option>
           <option value="Other">Other</option>
         </select>
+      </div>
+      <div>
+        <label>Date 📅</label>
+        <input
+          type="date"
+          name="date"
+          value={expense.date}
+          onChange={handleChange}
+          required
+        />
       </div>
       <button type="submit" style={{ backgroundColor: '#f39c12', color: '#fff', padding: '10px', border: 'none', borderRadius: '5px' }}>
         Add My Expense🌟
