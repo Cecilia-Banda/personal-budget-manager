@@ -1,5 +1,5 @@
 {
-  "homepage": "https://<Cecilia-Banda>.github.io/<personal-budget-manager>",
+  "homepage": "https://Cecilia-Banda.github.io/personal-budget-manager",
   "name": "personal-budget-manager",
   "version": "0.1.0",
   "private": true,
@@ -21,9 +21,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-}
-
-  }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

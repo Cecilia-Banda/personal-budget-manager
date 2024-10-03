@@ -20,7 +20,7 @@ function App() {
       
       // Alert if the total spent is greater than or equal to the budget limit
       if (totalSpent + Number(expense.amount) >= budgetLimit) {
-        alert("Whoa there, big spender! You're nearing your budget limit for this category.");
+        alert("Whoa there, big spender! You'll go broke at this rate.");
       }
 
       return updatedExpenses;
